@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imagenes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+</head>
+<body>
+    <nav class="bg-img">
+        <div class="fila">
+            <div class="columna">
+              <div class="card">
+                <div class="contenedor">
+                  <h2>Nicolás Lantigua</h2>
+                  <p class="title">Carrera: Software</p>
+                  <p>Proyecto de Galería de Imagenes</p>
+                  <br>
+                  <p>20198111@itla.edu.do</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+        </div>
+    </nav>
+    <div class="gallery-container">
+        <div class="column" id="column"> 
+           
+        </div>
+        <div class="column" id="column1"> 
+           
+        </div>
+        <div class="column" id="column2"> 
+           
+        </div>
+        <div class="column" id="column3"> 
+           
+        </div>
+    </div>
+
+    <footer id="Piepagina">
+  
+  <div>
+      <p><a class="active">20198111@itla.edu.do</a></p> |
+      <p><a class="active">829-708-2854</a></p> |
+      <p><a href="index.html">Autor</a></p>
+  </div>
+  
+  <p>Copyright © 2021. Todos los derechos recervados para GalleryAsu Inc. 2021-2024</p>
+  
+  </footer>
+
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        var dir = "images/";
+        var fileextension = ".jpg";
+        var count = 0;
+        $.ajax({
+            //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+            url: dir,
+            success: function (data) {
+                $(data).find("a:contains(" + fileextension + ")").each(function () {
+                    var filename = this.href.replace(window.location.pathname, "").replace("http://", "");
+                    var pathName = filename.substring(filename.lastIndexOf('/') + 1);    
+                    if (count < 10) {
+                        $("#column").append($("<div class='gallery-card'><a href="+ dir + pathName +" data-lightbox='roadtrip' ><img src=" + dir + pathName + " alt='Imagen'></a></div>"));
+                    }else if (count <20) {
+                        $("#column1").append($("<div class='gallery-card'><a href="+ dir + pathName +" data-lightbox='roadtrip' ><img src=" + dir + pathName + " alt='Imagen'></a></div>"));
+                    }else if (count <30) {
+                        $("#column2").append($("<div class='gallery-card'><a href="+ dir + pathName +" data-lightbox='roadtrip' ><img src=" + dir + pathName + " alt='Imagen'></a></div>"));
+                    }else if (count <45) {
+                        $("#column3").append($("<div class='gallery-card'><a href="+ dir + pathName +" data-lightbox='roadtrip' ><img src=" + dir + pathName + " alt='Imagen'></a></div>"));
+                    }
+                    
+                    console.log(count);
+                    count ++;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

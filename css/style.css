@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffff;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    
+}
+/**
+    NavBar
+**/
+.bg-img {
+    background-image: url("../images/img4.jpg");
+    z-index: 1;
+  min-height: 210px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 20px 42px;
+  text-decoration: none;
+  font-size: 17px;
+  font:bold;
+}
+
+.topnav a:hover {
+  background-color: rgb(167, 167, 167);
+  color: black;
+}
+/**
+    Galería de Imagenes
+**/
+.gallery-container{
+    /*width: 99%;
+    margin: 10px auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 300px);
+*/
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.gallery-container .gallery-card{
+    overflow: hidden;
+}
+.gallery-container .gallery-card a{
+    
+    width: 100%;
+    height: 100%;
+}
+.gallery-container .gallery-card a > img{
+    
+    object-fit: cover;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    
+    
+}
+.gallery-container .gallery-card a > img:hover{
+    transform: scale(1.5) rotate(30deg);
+}
+
+
+/*Animación zoom*/
+
+@keyframes zoom{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+
+
+  /*
+    Autor
+  */
+  
+  .columna {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    margin-right: 70px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @media screen and (max-width: 550px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+ .contenedor {
+    padding: 0 16px;
+  }
+  
+  .contenedor::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+  /*Pie de Pagina*/
+#Piepagina
+{
+    background-color: rgba(189, 195, 199, 0.5);
+    clear: both;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px ;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#Piepagina p {
+	display: inline-block;
+}
+p a{
+	box-sizing: border-box;
+	text-decoration:none;
+	color: black;
+}
+.Redes figure{
+     
+	display: inline-block;
+    border-image: 16px;
+	margin: 5px;
+}
+
